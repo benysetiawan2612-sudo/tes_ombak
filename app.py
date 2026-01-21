@@ -13,12 +13,11 @@ st.title("🌧️ Visualisasi Curah Hujan Bandung")
 st.markdown("Dashboard untuk menganalisis data curah hujan di Bandung")
 
 # Load data
-@st.cache_data
+#@st.cache_data
 def load_data():
-    if not os.path.exists("curah_hujan_bandung.xlsx"):
-        st.error("File Excel tidak ditemukan!")
-        st.stop()
-    return pd.read_excel("curah_hujan_bandung.xlsx")
+    df = pd.read_excel('curah_hujan_bandung.xlsx')
+    df['Tanggal'] = pd.to_datetime(df['Tanggal'])
+    return df
 
 
 df = load_data()
