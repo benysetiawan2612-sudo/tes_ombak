@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
 import openpyxl
 
 # Set page config
@@ -72,6 +71,7 @@ st.download_button(
     file_name="curah_hujan_filtered.csv",
     mime="text/csv"
 )
+
 
 
 
